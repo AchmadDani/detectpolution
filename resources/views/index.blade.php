@@ -8,6 +8,29 @@
         </div>
             <div class="content">
             <div class="d-flex justify-content-between px-5">
+                @if($isPremium)
+                <div class="card mb-3" style="max-width: 16rem;">
+                    <div class="card-header text-center fw-bold fs-3" style="background:#FFC436">PREMIUM</div>
+                    <div class="card-header text-center fs-5" style="background: #C3CBD9">Hanya Rp5.000
+                        <br>per bulan</div>
+                            <div class="card-body">
+                                <p class="card-text">Melihat kmauuuu udara real time.</p>
+                                <p class="card-text">Melihat cara menghadapi nya.</p>
+                                <p class="card-text">Menerima notifikasi udara buruk ketika anda pada lokasi tertentu.</p>
+                                <div class="d-flex flex-column align-items-center">
+                                    @auth
+                                    <a href="{{ route('subs') }}"><button type="submit" class="btn" style="background: #B4BFD4">Sign Up</button></a>
+                                    @else
+                                    <a href="{{ route('register') }}"><button type="submit" class="btn" style="background: #B4BFD4">Sign Up</button></a>
+                                    <div class="alert alert-warning" role="alert">
+                                        Silahkan login terlebih dahulu
+                                    </div>
+                                    @endauth
+                                </div>
+                            </div>
+                </div>
+
+                @else
                 <div class="card mb-3" style="max-width: 16rem;">
                     <div class="card-header text-center fw-bold fs-3" style="background:#FFC436">PREMIUM</div>
                     <div class="card-header text-center fs-5" style="background: #C3CBD9">Hanya Rp5.000
@@ -28,6 +51,8 @@
                                 </div>
                             </div>
                 </div>
+
+                @endif
 
                 <div class="card mb-3" style="width: 70%;">
                     <div class="card-body d-flex justify-content-between" style="background: #E2E0A7" >

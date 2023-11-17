@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\ProfileController;
@@ -16,13 +17,15 @@ use App\Http\Controllers\ProfileController;
 |
 */
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/index', [UserController::class, 'index'])->name('user.index');
 Route::post('/admin/approve/{id}', [AdminController::class, 'approve'])->name('admin.approve');
 
 Route::post('upsubs', [UploadController::class, 'upload'])->name('upload');
 
-Route::get('/index', function () {
-    return view('index');
-});
+// Route::get('/index', function () {
+//     return view('index');
+// });
+
 Route::get('/subs', function () {
     return view('subs');
 })->name('subs');
