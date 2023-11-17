@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UploadController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::post('/admin/approve/{id}', [AdminController::class, 'approve'])->name('admin.approve');
+
+Route::post('upsubs', [UploadController::class, 'upload'])->name('upload');
+
+Route::get('/index', function () {
+    return view('index');
+});
+Route::get('/subs', function () {
+    return view('subs');
+})->name('subs');
 
 Route::get('/', function () {
     return view('welcome');
