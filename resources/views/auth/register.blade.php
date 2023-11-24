@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
 @section('container')
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="mt-5 p-5 rounded shadow-sm" style="width: 400px; background-color: #B4BFD4;">
+        <div class="bg d-flex justify-content-center align-items-center">
+            <div class="p-5 rounded shadow-sm" style="width: 400px; background-color: #B4BFD4;">
                 <div class="mb-3 text-center" style="font-weight: bold; font-size: 1.2em;">
                     Register
                 </div>
-                
+
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
                 
@@ -36,7 +36,6 @@
                     </div>
                     
                 </form>
-                
             </div>
         </div>
 @endsection

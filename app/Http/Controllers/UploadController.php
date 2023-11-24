@@ -15,7 +15,7 @@ class UploadController extends Controller
             $image = $request->file('image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $path = $image->storeAs('public/images', $filename);
-            $upload->image = $filename;
+            $upload->image = 'images/' . $filename;
             $upload->user_id = auth()->id();
 
         }
