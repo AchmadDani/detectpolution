@@ -27,9 +27,9 @@ use Illuminate\Http\Request;
             return redirect()->back();
         }
 
-        // public function index() {
-        //     return view('admin');
-        // }
+        public function king() {
+            return view('king');
+        }
     
         public function getKoleksi(){
             $uploads = Upload::with('user')->get();

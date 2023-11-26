@@ -57,8 +57,10 @@
 
 @section('container')
     <div class="bg" style="background-color: #B4BFD4;">
-        <h1>Admin Page</h1>
-        <table class="table" style="background-color: #B4BFD4;">
+        <div class="text fs-2 fw-bold">
+            Admin Page
+        </div>
+        <table class="table mt-4" style="background-color: #B4BFD4;">
             <thead>
                 <tr>
                     <th>Image</th>

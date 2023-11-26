@@ -17,6 +17,7 @@ use App\Http\Controllers\ProfileController;
 |
 */
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/king', [AdminController::class, 'king'])->name('king.index');
 Route::post('/index', [UserController::class, 'index'])->name('user.index');
 Route::post('/admin/approve/{id}', [AdminController::class, 'approve'])->name('admin.approve');
 // Route::get('/koleksiView/{koleksi}', [CollectionController::class, 'show'])->name('koleksi.infoKoleksi');
@@ -27,6 +28,10 @@ Route::post('upsubs', [UploadController::class, 'upload'])->name('upload');
 // Route::get('/index', function () {
 //     return view('index');
 // });
+
+Route::get('/gini', function () {
+    return view('fadil');
+})->name('fadil');
 
 Route::get('/subs', function () {
     return view('subs');

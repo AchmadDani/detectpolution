@@ -9,6 +9,7 @@
         <!-- Tambahkan link CSS DataTables -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <title>Register</title>
 </head>
 
@@ -110,11 +111,47 @@
     <!-- End Content -->
 
     <!-- footer -->
-    <footer class="text-center py-3" style="background-color: #2FB69F;">
+    <footer class="text-center" style="background-color: #2FB69F">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Instagram -->
+            <a
+              data-mdb-ripple-init
+              class="btn text-white btn-floating m-1"
+              style="background-color: #ac2bac;"
+              href="#!"
+              role="button"
+              ><i class="bi bi-instagram"></i
+            ></a>
+      
+            <!-- Github -->
+            <a
+              data-mdb-ripple-init
+              class="btn text-white btn-floating m-1"
+              style="background-color: #333333;"
+              href="#!"
+              role="button"
+              ><i class="bi bi-github"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2020 Copyright:
+          <a class="text-body" href="https://detectpolution.com/">detectpolution.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+    {{-- <footer class="text-center py-3" style="background-color: #2FB69F;">
         <div class="container">
           <span style="color: white;">copyright@2023</span>
         </div>
-    </footer>
+    </footer> --}}
     <!-- End Footer-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

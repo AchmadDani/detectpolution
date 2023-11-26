@@ -2,18 +2,32 @@
 
 @section('container')
     <!-- Content -->
+    <div class="d-flex justify-content-between">
         <div class="text px-5">
             <h1>Kualitas Udara di {{ $cityName }}</h1> {{-- kata bandung di samping di ambil sesuai inputan --}}
             <p>Indeks kualitas udara (AQI) dan polusi udara di {{ $cityName }}</p>
         </div>
+        <div class="notif px-3">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="img/notif.png" alt="" width="20" height="20">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Tidak Ada Notifikasi</a></li>
+                    <li>
+                    </li>
+                </ul>
+            </li>
+        </div>
+    </div>
             <div class="content">
             <div class="d-flex justify-content-between px-5">
                 @if($isPremium)
                 <div class="card mb-3" style="max-width: 18rem;">
-                    {{-- <div class="text fs-1 fw-bold">INI ADALAH HALAMAN PREMIUM
+                    <div class="text fs-1 fw-bold">INI ADALAH HALAMAN PREMIUM
                         <br>Developer masih liburan
-                    </div> --}}
-                    <div class="card-header text-center fw-bold fs-3" style="background:#FFC436">PREMIUM</div>
+                    </div>
+                    {{-- <div class="card-header text-center fw-bold fs-3" style="background:#FFC436">PREMIUM</div>
                     <div class="card-header text-center fs-5" style="background: #C3CBD9">Hanya Rp5.000
                         <br>per bulan</div>
                             <div class="card-body">
@@ -30,13 +44,13 @@
                                     </div>
                                     @endauth
                                 </div>
-                            </div>
+                            </div> --}}
                 </div>
 
                 @else
                 <div class="card mb-3" style="max-width: 18rem;">
                     <div class="card-header text-center fw-bold fs-3" style="background:#FFC436">PREMIUM</div>
-                    <div class="card-header text-center fs-5" style="background-color: {{ $bg }}">Hanya Rp5.000
+                    <div class="card-header text-center fs-5" style="background: #C3CBD9">Hanya Rp5.000
                         <br>per bulan</div>
                             <div class="card-body">
                                 <p class="card-text">Melihat Index udara real time.</p>
