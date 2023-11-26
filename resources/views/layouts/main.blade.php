@@ -113,7 +113,7 @@
     <!-- footer -->
     <footer class="text-center" style="background-color: #2FB69F">
         <!-- Grid container -->
-        <div class="container p-4 pb-0">
+        {{-- <div class="container p-4 pb-0">
           <!-- Section: Social media -->
           <section class="mb-4">
             <!-- Instagram -->
@@ -137,13 +137,13 @@
             ></a>
           </section>
           <!-- Section: Social media -->
-        </div>
+        </div> --}}
         <!-- Grid container -->
       
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-          © 2020 Copyright:
-          <a class="text-body" href="https://detectpolution.com/">detectpolution.com</a>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05); color: white">
+          © 2023 Copyright:
+          <a class="text" style="color: white;" href="https://detectpolution.com/">GDAJ Team</a>
         </div>
         <!-- Copyright -->
       </footer>
