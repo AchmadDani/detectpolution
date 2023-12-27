@@ -21,7 +21,7 @@
                 <img src="img/Logo.png" alt="" width="50" height="50">
             </a>
             <div class="d-flex">
-                @auth
+                @auth   
                 <div class="dropdown">
                     <button class="btn dropdown-toggle bg-transparent text-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }}

@@ -22,6 +22,6 @@ class UploadController extends Controller
 
         $upload->save();
 
-        return redirect()->back();
+        return redirect()-> back();
     }
 }

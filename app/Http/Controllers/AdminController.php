@@ -36,7 +36,7 @@ use Illuminate\Http\Request;
         
             // Delete the upload record
             $upload->delete();
-        
+
             return redirect()->back();
         }
 
