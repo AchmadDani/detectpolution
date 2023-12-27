@@ -2,7 +2,7 @@
 
 @section('container')
     <!-- Content -->
-    <div class="bg">
+    <div class="bg" style="height: 100vh">
         <div class="content">
             <div class="text">
                 <h1>Cek Kualitas Udara Anda</h1>

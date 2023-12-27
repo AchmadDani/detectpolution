@@ -3,7 +3,7 @@
 @section('container')
 <div class="d-flex justify-content-center align-items-center">
     <div class="mt-5 p-5 rounded shadow-sm" style="width: 800px; background-color: #B4BFD4;">
-        <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('uploads') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3 text-center">
                 <img src="img/QR.jpeg" alt="Upload Image" width="20%">

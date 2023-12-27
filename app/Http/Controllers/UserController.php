@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
+use App\Models\User;
 use App\Models\Upload;
 use GuzzleHttp\Client;
+use Illuminate\Http\Request;
 // use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class UserController extends Controller
 {
+
+    public function getUsers()
+    {
+        $users = User::select('id', 'name', 'email', 'role')->get();
+
+        return response()->json($users);
+    }
 
 
     public function index(Request $request)
@@ -66,6 +74,7 @@ class UserController extends Controller
         'isPremium' => $isPremium,
     ]);
     }
+    
 }
     // public function index() {
         // $user = Auth::user();

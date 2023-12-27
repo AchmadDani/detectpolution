@@ -16,6 +16,11 @@ use App\Http\Controllers\ProfileController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+
+Route::get('/get-users', [UserController::class, 'getUsers']);
+
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/king', [AdminController::class, 'king'])->name('king.index');
 Route::post('/index', [UserController::class, 'index'])->name('user.index');
@@ -25,9 +30,9 @@ Route::get('/getKoleksi', [AdminController::class, 'getKoleksi'])->name('getKole
 
 Route::post('upsubs', [UploadController::class, 'upload'])->name('upload');
 
-// Route::get('/index', function () {
-//     return view('index');
-// });
+Route::get('/indexNon', function () {
+    return view('index');
+});
 
 Route::get('/gini', function () {
     return view('fadil');
