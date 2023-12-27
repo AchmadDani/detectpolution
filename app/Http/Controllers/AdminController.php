@@ -19,7 +19,20 @@ use Illuminate\Http\Request;
             $upload = Upload::findOrFail($id);
         
             // Update role to 'premium'
-            $upload->user->update(['role' => 'premium']);
+            $upload->user->update(['role' => 'premium','status' => 'elite']);
+        
+            // Delete the upload record
+            $upload->delete();
+        
+            return redirect()->back();
+        }
+
+        public function reject($id)
+        {
+            $upload = Upload::findOrFail($id);
+        
+            // Update role to 'premium'
+            $upload->user->update(['status' => 'gagal']);
         
             // Delete the upload record
             $upload->delete();

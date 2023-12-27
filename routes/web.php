@@ -20,6 +20,7 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/king', [AdminController::class, 'king'])->name('king.index');
 Route::post('/index', [UserController::class, 'index'])->name('user.index');
 Route::post('/admin/approve/{id}', [AdminController::class, 'approve'])->name('admin.approve');
+Route::post('/admin/reject/{id}', [AdminController::class, 'reject'])->name('admin.reject');
 // Route::get('/koleksiView/{koleksi}', [CollectionController::class, 'show'])->name('koleksi.infoKoleksi');
 Route::get('/getKoleksi', [AdminController::class, 'getKoleksi'])->name('getKoleksi');
 

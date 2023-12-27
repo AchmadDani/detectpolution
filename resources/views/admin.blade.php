@@ -108,6 +108,10 @@
                                 @csrf
                                 <button type="submit" class="btn btn-success">Approve</button>
                             </form>
+                            <form action="{{ route('admin.reject', $upload->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Reject</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
