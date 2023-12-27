@@ -13,7 +13,10 @@
                     <img src="img/notif.png" alt="" width="20" height="20">
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Tidak Ada Notifikasi</a></li>
+                    <li><a class="dropdown-item">{{$contentNotif}}</a></li>
+                    <li><a class="dropdown-item">dapatkan promo subcription!</a></li>
+                    @if($status == 'elite')<li><a class="dropdown-item">selamat anda mendapatkan fitur tambahan!</a></li>@endif
+                    @if($status == 'gagal')<li><a class="dropdown-item">maaf transaksi anda gagal!</a></li>@endif
                     <li>
                     </li>
                 </ul>

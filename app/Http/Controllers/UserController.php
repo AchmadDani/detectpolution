@@ -27,6 +27,7 @@ class UserController extends Controller
 
         $data = $response->json();
 
+
         //cek user prem
         $user = Auth::user();
         $isPremium = $user && $user->role === 'premium';
@@ -37,23 +38,28 @@ class UserController extends Controller
     $background = '';
     $bg = '';
     $text = '';
+    $contentNotif = 'Tidak Ada Notifikasi';
 
     if ($aqius >= 0 && $aqius <= 50) {
         $background = '#A8E05F';
         $bg = '#87C13C';
         $text = 'Baik';
+        $contentNotif = 'Anda sangat pintar memilih tempat!';
     } elseif ($aqius >= 51 && $aqius <= 100) {
         $background = '#FDD64B';
         $bg = '#EFBE1D';
         $text = 'Sedang';
+        $contentNotif = 'Anda pintar memilih tempat!';
     } elseif ($aqius >= 101 && $aqius <= 150) {
         $background = '#FF9B57';
         $bg = '#F27E2F';
         $text = 'Tidak sehat bagi kelompok sensitif';
+        $contentNotif = 'Anda salah memilih tempat!';
     } elseif ($aqius >= 151 && $aqius <= 200) {
         $background = '#FE6A69';
         $bg = '#E84B50';
         $text = 'Tidak sehat';
+        $contentNotif = 'Awas Anda memilih tempat Kematian!';
     }
 
     // Kirim data ke tampilan hasil pencarian
@@ -64,6 +70,8 @@ class UserController extends Controller
         'background_color' => $bg,  // Ubah dari 'background-color' ke 'background_color'
         'text' => $text,
         'isPremium' => $isPremium,
+        'contentNotif' => $contentNotif,
+        'status' => $user->status,
     ]);
     }
 }
