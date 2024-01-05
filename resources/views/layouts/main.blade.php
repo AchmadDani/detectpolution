@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.min.css" rel="stylesheet">
     <title>Register</title>
 </head>
 
@@ -81,16 +82,20 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="img/notif.png" alt="" width="20" height="20">
                         </a>
+                       
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Tidak Ada Notifikasi</a></li>
+                            <li><a class="dropdown-item">{{$contentNotif}}</a></li>
+                            <li><a class="dropdown-item">Subscribe untuk mendapatkan peringatan</a></li>
+                            @if($status == 'elite')<li><a class="dropdown-item">Pembayaran berhasil, anda sekarang premium member</a></li>@endif
+                            @if($status == 'gagal')<li><a class="dropdown-item">Pembayaran tidak valid, silahkan</a></li>@endif
                             <li>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
                     @else
                     <a class="nav-link" href="{{ route('login') }}" style="color: white;">Login</a>
                     @if (Route::has('register'))
@@ -164,6 +169,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+{{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.all.min.js"></script> --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Masukkan ini di bagian head atau sebelum bagian body selesai -->
 
 </body>
 

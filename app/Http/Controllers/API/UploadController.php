@@ -6,15 +6,19 @@ use App\Models\Upload;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Resources\Upload as UploadResource; 
-use App\Http\Controllers\BaseController as BaseController;
 
-class UploadController extends BaseController
+class UploadController
 {
     public function index()
     {
         $uploads = Upload::all();
-        return response()->json(['uploads' => $uploads], 200);
+        return response()->json([
+            'success' => true,
+            'message' => 'Berhasil mengambil seluruh data',
+            'data' => [
+                'upload' => $uploads,
+            ],
+        ], 201);
     }
 
     public function store(Request $request)
@@ -34,7 +38,14 @@ class UploadController extends BaseController
             'image' => $imageName,
         ]);
 
-        return response()->json(['data' => $upload], 201);
+        // return response()->json(['data' => $upload], 201);
+        return response()->json([
+            'success' => true,
+            'message' => 'Upload Berhasil',
+            'data' => [
+                'upload' => $upload,
+            ],
+        ], 201);
     }
 
     public function show($id)
@@ -45,7 +56,13 @@ class UploadController extends BaseController
             return response()->json(['message' => 'Upload not found'], 404);
         }
 
-        return response()->json(['upload' => $upload], 200);
+        return response()->json([
+            'success' => true,
+            'message' => 'Get by id Berhasil',
+            'data' => [
+                'upload' => $upload,
+            ],
+        ], 201);
     }
 
     public function update(Request $request, $id)

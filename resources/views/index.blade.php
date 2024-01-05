@@ -7,21 +7,21 @@
             <h1>Kualitas Udara di {{ $cityName }}</h1> {{-- {{ $cityName }} --}}
             <p>Indeks kualitas udara (AQI) dan polusi udara di {{ $cityName }}</p>
         </div>
-        {{-- <div class="notif px-3">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="img/notif.png" alt="" width="20" height="20">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item">{{$contentNotif}}</a></li>
-                    <li><a class="dropdown-item">dapatkan promo subcription!</a></li>
-                    @if($status == 'elite')<li><a class="dropdown-item">selamat anda mendapatkan fitur tambahan!</a></li>@endif
-                    @if($status == 'gagal')<li><a class="dropdown-item">maaf transaksi anda gagal!</a></li>@endif
-                    <li>
-                    </li>
-                </ul>
-            </li>
-        </div> --}}
+        {{-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="img/notif.png" alt="" width="20" height="20">
+          </a>
+          
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              @if($isPremium)<li><a class="dropdown-item">{{$contentNotif}}</a></li>
+              <li><a class="dropdown-item">Pembayaran berhasil, anda sekarang premium member</a></li>
+              @else<li><a class="dropdown-item">Subscribe untuk mendapatkan peringatan</a></li>@endif
+              @if($status == 'elite')<li><a class="dropdown-item">Pembayaran berhasil, anda sekarang premium member</a></li>@endif
+              @if($status == 'gagal')<li><a class="dropdown-item">Pembayaran tidak valid, silahkan</a></li>@endif
+              <li>
+              </li>
+          </ul> --}}
+      </li>
     </div>
             <div class="content">
             <div class="d-flex justify-content-between gap-3">
@@ -30,7 +30,6 @@
                     <div class="text p-3" style="font-size: 15px">Bagaimana cara melindungi dari
                         <br>polusi udara di Kota {{ $cityName }}?
                     </div>
-
                     <div class="row row-cols-1 row-cols-md-2 g-4 p-4">
                         <div class="col">
                           <div class="card">
@@ -71,7 +70,7 @@
                 <div class="card mb-4" style="width: 30%;">
                     <div class="card-header text-center fw-bold fs-3" style="background:#FFC436">PREMIUM</div>
                     <div class="card-header text-center fs-5" style="background: #C3CBD9">Hanya Rp5.000
-                        <br>per bulan</div>
+                        <br>Lifetime!!!</div>
                             <div class="card-body">
                                 <p class="card-text">Melihat Index udara real time.</p>
                                 <p class="card-text">Melihat cara menghadapi nya.</p>

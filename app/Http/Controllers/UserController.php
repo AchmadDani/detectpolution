@@ -35,6 +35,11 @@ class UserController extends Controller
 
         $data = $response->json();
 
+        // Cek apakah nama kota ditemukan dalam respons API
+        if (!isset($data['data']['city'])) {
+            throw new \Exception('Nama kota tidak ditemukan. Silahkan pilih kota lain.');
+        }
+
 
         //cek user prem
         $user = Auth::user();
@@ -52,22 +57,22 @@ class UserController extends Controller
         $background = '#A8E05F';
         $bg = '#87C13C';
         $text = 'Baik';
-        $contentNotif = 'Anda sangat pintar memilih tempat!';
+        $contentNotif = 'Lingkungan disekitar anda cukup baik!';
     } elseif ($aqius >= 51 && $aqius <= 100) {
         $background = '#FDD64B';
         $bg = '#EFBE1D';
         $text = 'Sedang';
-        $contentNotif = 'Anda pintar memilih tempat!';
+        $contentNotif = 'Tempat di sekitar anda terlihat baik!';
     } elseif ($aqius >= 101 && $aqius <= 150) {
         $background = '#FF9B57';
         $bg = '#F27E2F';
         $text = 'Tidak sehat bagi kelompok sensitif';
-        $contentNotif = 'Anda salah memilih tempat!';
+        $contentNotif = 'Tetap waspada!';
     } elseif ($aqius >= 151 && $aqius <= 200) {
         $background = '#FE6A69';
         $bg = '#E84B50';
         $text = 'Tidak sehat';
-        $contentNotif = 'Awas Anda memilih tempat Kematian!';
+        $contentNotif = 'Anda berada dalam kawasan wajib memakai masker!';
     }
 
     // Kirim data ke tampilan hasil pencarian
@@ -79,15 +84,9 @@ class UserController extends Controller
         'text' => $text,
         'isPremium' => $isPremium,
         'contentNotif' => $contentNotif,
-        'status' => $user->status,
+        // 'status' => $user->status,
     ]);
     }
-    
 }
-    // public function index() {
-        // $user = Auth::user();
-        // $isPremium = $user && $user->role === 'premium';
-
-        // return view('index', compact('isPremium'));
-    // }
+    
 

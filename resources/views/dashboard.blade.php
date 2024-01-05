@@ -1,15 +1,29 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.main')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-welcome />
+@section('container')
+
+<!-- Add this section to display success message -->
+@if(session('error'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('error') }}
+                </div>
+            @endif
+
+    <!-- Content -->
+    <div class="bg" style="height: 100vh">
+        <div class="content">
+            <div class="text">
+                <h1>Cek Kualitas Udara Anda</h1>
             </div>
-        </div>
+            <nav class="navbar navbar-light">
+                <div class="container-fluid">
+                    <form class="d-flex" action="{{ route('user.index') }}" method="post">
+                        @csrf
+                        <input class="form-control me-2" type="search" placeholder="Masukan nama daerah" aria-label="Search" name="cityName">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div> 
     </div>
-</x-app-layout>
+@endsection

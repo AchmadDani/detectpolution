@@ -19,33 +19,24 @@ use App\Http\Controllers\ProfileController;
 
 
 
-Route::get('/get-users', [UserController::class, 'getUsers']);
+// Route::get('/get-users', [UserController::class, 'getUsers']);
+
+
+Route::post('/index', [UserController::class, 'index'])->name('user.index');
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-Route::get('/king', [AdminController::class, 'king'])->name('king.index');
-Route::post('/index', [UserController::class, 'index'])->name('user.index');
 Route::post('/admin/approve/{id}', [AdminController::class, 'approve'])->name('admin.approve');
 Route::post('/admin/reject/{id}', [AdminController::class, 'reject'])->name('admin.reject');
-// Route::get('/koleksiView/{koleksi}', [CollectionController::class, 'show'])->name('koleksi.infoKoleksi');
-Route::get('/getKoleksi', [AdminController::class, 'getKoleksi'])->name('getKoleksi');
 
 Route::post('upsubs', [UploadController::class, 'upload'])->name('upload');
 
-Route::get('/indexNon', function () {
-    return view('index');
-});
 
-Route::get('/gini', function () {
-    return view('fadil');
-})->name('fadil');
+
 
 Route::get('/subs', function () {
     return view('subs');
 })->name('subs');
 
-Route::get('/tes', function () {
-    return view('tes');
-});
 
 Route::get('/', function () {
     return view('welcome');

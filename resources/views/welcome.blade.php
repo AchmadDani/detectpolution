@@ -1,6 +1,14 @@
 @extends('layouts.main')
 
 @section('container')
+
+<!-- Add this section to display success message -->
+@if(session('error'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('error') }}
+                </div>
+            @endif
+
     <!-- Content -->
     <div class="bg" style="height: 100vh">
         <div class="content">
@@ -16,6 +24,6 @@
                     </form>
                 </div>
             </nav>
-        </div>
+        </div> 
     </div>
 @endsection

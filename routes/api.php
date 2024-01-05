@@ -21,11 +21,12 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.api');
 Route::post('/uploads', [UploadController::class, 'store'])->name('uploads.api');
 Route::get('/uploads', [UploadController::class, 'index']);
 Route::get('/uploads/{id}', [UploadController::class, 'show']);
+Route::delete('/uploads/{id}', [UploadController::class, 'destroy.api']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     Route::get('/uploads/{id}', [UploadController::class, 'show']);
     Route::put('/uploads/{id}', [UploadController::class, 'update']);
-    Route::delete('/uploads/{id}', [UploadController::class, 'destroy']);
+   
 
     return $request->user();
 });
